@@ -27,8 +27,8 @@ public class OrderingActivity extends AppCompatActivity {
 
 
         SectionsPagerAdapter  adapter  = new SectionsPagerAdapter((getSupportFragmentManager()));
-        mSectionsPagerAdapter.addFragment(new contactDetailsActivity());
-        mSectionsPagerAdapter.addFragment(new serviceWashActivity());
+        mSectionsPagerAdapter.addFragment(new contactDetails());
+        mSectionsPagerAdapter.addFragment(new serviceWash());
         mSectionsPagerAdapter.addFragment(new paymentActivity());
         viewPager.setAdapter(adapter);
     }
@@ -54,40 +54,3 @@ public class OrderingActivity extends AppCompatActivity {
 
     }
 
-    //returns the right fragment that is associated with the right tab
-    public class SectionsPagerAdapter extends FragmentPagerAdapter {
-
-        private final List<Fragment> mFragmentList = new ArrayList<>();
-
-        public void addFragment(Fragment fragment) {
-            mFragmentList.add(fragment);
-        }
-
-        public SectionsPagerAdapter(FragmentManager fm) {
-            super(fm);
-        }
-
-        @Override
-        public Fragment getItem(int position) {
-            return mFragmentList.get(position);
-        }
-
-        @Override
-        public int getCount() {
-            return mFragmentList.size();
-        }
-
-        public void addFragment(contactDetailsActivity contactDetailsActivity) {
-
-
-        }
-
-        public void addFragment(serviceWashActivity serviceWashActivity) {
-        }
-
-        public void addFragment(paymentActivity paymentActivity) {
-        }
-    }
-
-
-}
