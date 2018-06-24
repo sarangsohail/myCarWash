@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class contactDetails extends Fragment {
 
@@ -21,7 +22,13 @@ public class contactDetails extends Fragment {
 
         BTNTest1 = (Button) view.findViewById(R.id.btnTEST1);
 
-
+        final String toast = "testing works";
+        BTNTest1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+              Toast.makeText(getContext(), toast, Toast.LENGTH_LONG).show();
+            }
+        });
 
         return view;
     }
