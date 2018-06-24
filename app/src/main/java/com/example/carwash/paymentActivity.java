@@ -17,7 +17,7 @@ public class paymentActivity extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater,  ViewGroup container,  Bundle savedInstanceState) {
-        View view =  inflater.inflate(R.layout.service_wash, container, false);
+        View view =  inflater.inflate(R.layout.payment_tab, container, false);
 
         BTNTest2 = (Button) view.findViewById(R.id.btnTEST2);
 

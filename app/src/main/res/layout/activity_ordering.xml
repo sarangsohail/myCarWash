@@ -39,13 +39,12 @@
                 android:id="@+id/tabItem"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:icon="@drawable/carlocation" />
-
+                />
             <android.support.design.widget.TabItem
                 android:id="@+id/tabItem2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:icon="@drawable/servicewash" />
+                />
 
             <android.support.design.widget.TabItem
                 android:id="@+id/tabItem3"

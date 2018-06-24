@@ -17,7 +17,7 @@ public class contactDetails extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater,  ViewGroup container,  Bundle savedInstanceState) {
-        View view =  inflater.inflate(R.layout.contact_details_tab, container, false);
+        View view =  inflater.inflate(R.layout.contactdetails, container, false);
 
         BTNTest1 = (Button) view.findViewById(R.id.btnTEST1);
 
