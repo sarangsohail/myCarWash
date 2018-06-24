@@ -20,15 +20,6 @@ public class contactDetails extends Fragment {
     public View onCreateView(LayoutInflater inflater,  ViewGroup container,  Bundle savedInstanceState) {
         View view =  inflater.inflate(R.layout.contactdetails, container, false);
 
-        BTNTest1 = (Button) view.findViewById(R.id.btnTEST1);
-
-        final String toast = "testing works";
-        BTNTest1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-              Toast.makeText(getContext(), toast, Toast.LENGTH_LONG).show();
-            }
-        });
 
         return view;
     }
