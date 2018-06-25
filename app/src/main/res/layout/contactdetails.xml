@@ -6,24 +6,43 @@
 
 
     <TextView
+        android:id="@+id/emailTV2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/emailTV"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="-58dp"
+        android:text="Email"
+        android:textSize="25dp" />
+
+    <TextView
         android:id="@+id/emailTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="11dp"
-        android:layout_marginTop="11dp"
-        android:text="Email"
+        android:layout_marginTop="111dp"
+        android:text="Address"
         android:textSize="25dp" />
 
     <EditText
-        android:id="@+id/email_confirmation_input"
-        android:layout_width="231dp"
+        android:id="@+id/editText4"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
         android:layout_alignStart="@+id/emailTV"
-        android:layout_below="@+id/emailTV"
+        android:layout_marginTop="190dp"
         android:ems="10"
-        android:hint="yourEmail@something.com"
+        android:inputType="textMultiLine" />
+
+    <EditText
+        android:id="@+id/editText6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/emailTV"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="-111dp"
+        android:ems="10"
         android:inputType="textEmailAddress" />
 
 </RelativeLayout>
