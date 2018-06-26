@@ -13,6 +13,7 @@ import android.support.design.widget.TextInputLayout;
 import android.support.v4.widget.NestedScrollView;
 import android.support.v7.widget.AppCompatButton;
 import android.support.v7.widget.AppCompatTextView;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 
 
@@ -40,7 +41,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        getSupportActionBar().hide();
+        getSupportActionBar().setTitle(null);
 
         initViews();
         initListeners();
@@ -60,6 +61,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
         textViewLinkRegister = (AppCompatTextView) findViewById(R.id.textViewLinkRegister);
     }
+
 
     private void initListeners(){
         appCompatButtonLogin.setOnClickListener(this);

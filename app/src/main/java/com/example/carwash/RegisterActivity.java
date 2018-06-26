@@ -116,7 +116,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
             // Snack Bar to show success message that record saved successfully
             String succToast = getString(R.string.success_message);
             Toast.makeText(getApplicationContext(), succToast, Snackbar.LENGTH_LONG).show();
-            emptyInputEditText();
+          //  emptyInputEditText();
             Intent sendBackToLogin =  new Intent(this, LoginActivity.class);
             startActivity(sendBackToLogin);
 

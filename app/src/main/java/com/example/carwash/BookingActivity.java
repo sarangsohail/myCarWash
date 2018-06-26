@@ -17,7 +17,7 @@ public class BookingActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_booking);
         hideKeyboard(this);
-
+        getSupportActionBar().setTitle("Welcome");
         orderButton = (Button) findViewById(R.id.orderButton);
         orderButton.setOnClickListener(new View.OnClickListener() {
             @Override
