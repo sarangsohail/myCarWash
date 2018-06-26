@@ -14,8 +14,7 @@ import android.support.v4.widget.NestedScrollView;
 import android.support.v7.widget.AppCompatButton;
 import android.support.v7.widget.AppCompatTextView;
 import android.view.View;
-import android.view.animation.Animation;
-import android.widget.ProgressBar;
+
 
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
