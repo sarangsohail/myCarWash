@@ -10,17 +10,11 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="LoginActivity">
 
+
     <android.support.v7.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-
-        <android.support.v7.widget.AppCompatImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="40dp"
-             />
 
         <android.support.design.widget.TextInputLayout
             android:id="@+id/textInputLayoutEmail"
@@ -61,6 +55,7 @@
             android:layout_marginTop="40dp"
             android:text="@string/text_login" />
 
+
         <android.support.v7.widget.AppCompatTextView
             android:id="@+id/textViewLinkRegister"
             android:layout_width="fill_parent"
@@ -68,7 +63,9 @@
             android:layout_marginTop="30dp"
             android:gravity="center"
             android:text="@string/text_not_member"
-            android:textSize="16sp"
-/>
+            android:textSize="16sp"/>
+
+
     </android.support.v7.widget.LinearLayoutCompat>
+
 </android.support.v4.widget.NestedScrollView>
