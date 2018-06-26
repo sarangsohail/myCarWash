@@ -1,11 +1,17 @@
 package com.example.carwash;
 
+import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.provider.FontsContract;
+import android.support.v4.view.ViewPropertyAnimatorListenerAdapter;
 import android.util.Log;
 
-public class DatabaseHelper  extends SQLiteOpenHelper{
+import java.util.EnumMap;
+
+public class DatabaseHelper  extends SQLiteOpenHelper {
 
     private static final int DATABASE_VERSION = 1;
 
@@ -27,7 +33,7 @@ public class DatabaseHelper  extends SQLiteOpenHelper{
 
 
     public DatabaseHelper(Context context) {
-        super(context,DATABASE_NAME, null, DATABASE_VERSION);
+        super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
     @Override
@@ -39,5 +45,68 @@ public class DatabaseHelper  extends SQLiteOpenHelper{
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL(DROP_USER_TABLE);
         onCreate(db);
+    }
+
+    //get the data from the model and store it
+    public void addUser(User user) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(COLUMN_USER_NAME, user.getName());
+        contentValues.put(COLUMN_USER_EMAIL, user.getEmail());
+        contentValues.put(COLUMN_USER_PASSWORD, user.getPassword());
+
+        db.insert(TABLE_USER, null, contentValues);
+        db.close();
+    }
+
+
+    public boolean checkUser(String email) {
+        String[] columns = {
+                COLUMN_USER_ID
+        };
+        SQLiteDatabase db = this.getWritableDatabase();
+        String selection = COLUMN_USER_EMAIL + " = ?";
+        String[] selectionArgs = {email};
+
+        Cursor cursor = db.query(TABLE_USER,
+                columns,
+                selection,
+                selectionArgs,
+                null,
+                null,
+                null);
+        int cursorCount = cursor.getCount();
+        cursor.close();
+        db.close();
+
+        if (cursorCount > 0) {
+            return true;
+        }
+        return false;
+    }
+
+    public boolean checkUser(String email, String password) {
+        String[] columns = {
+                COLUMN_USER_ID
+        };
+        SQLiteDatabase db = this.getWritableDatabase();
+        String selection = COLUMN_USER_EMAIL + " = ?" + " AND " + COLUMN_USER_PASSWORD + " =?";
+        String[] selectionArgs = {email, password};
+
+        Cursor cursor = db.query(TABLE_USER,
+                columns,
+                selection,
+                selectionArgs,
+                null,
+                null,
+                null);
+        int cursorCount = cursor.getCount();
+        cursor.close();
+        db.close();
+
+        if (cursorCount > 0) {
+            return true;
+        }
+        return false;
     }
 }

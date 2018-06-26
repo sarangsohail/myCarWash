@@ -27,7 +27,8 @@
         <activity
             android:name=".OrderingActivity"
             android:label="@string/title_activity_ordering"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".RegisterActivity"></activity>
     </application>
 
 </manifest>
