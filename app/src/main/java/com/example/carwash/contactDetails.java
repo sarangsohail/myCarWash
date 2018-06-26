@@ -14,13 +14,9 @@ public class contactDetails extends Fragment {
     private static final String TAG = "Contact Details Fragment";
 
 
-    private Button BTNTest1;
-    @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater,  ViewGroup container,  Bundle savedInstanceState) {
         View view =  inflater.inflate(R.layout.contactdetails, container, false);
-
-
         return view;
     }
 }
