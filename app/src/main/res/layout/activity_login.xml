@@ -27,6 +27,8 @@
         <android.support.design.widget.TextInputLayout
             android:id="@+id/textInputLayoutEmail"
             android:layout_width="match_parent"
+            android:background="@color/lightGrey"
+            android:textColorHint="@color/colorPrimary"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp" >
 
@@ -38,7 +40,7 @@
                 android:inputType="text"
                 android:maxLines="1"
                 android:textColor="@color/white"
-                android:textColorHighlight="@color/white"
+                android:textColorHighlight="@color/colorPrimary"
                 android:textColorHint="@color/white" />
         </android.support.design.widget.TextInputLayout>
 
@@ -46,7 +48,9 @@
             android:id="@+id/textInputLayoutPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColorHint="@color/white"
+            android:textColorHint="@color/colorPrimary"
+            android:background="@color/lightGrey"
+
             android:layout_marginTop="20dp" >
 
             <android.support.design.widget.TextInputEditText
