@@ -1,17 +1,25 @@
 package com.example.carwash;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
+import android.media.MediaPlayer;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
+import android.widget.VideoView;
+
+import static com.example.carwash.R.raw.video;
 
 public class BookingActivity extends AppCompatActivity {
 
     private Button orderButton;
+    VideoView videoView;
 
+    @SuppressLint("ResourceType")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,6 +27,17 @@ public class BookingActivity extends AppCompatActivity {
         hideKeyboard(this);
         getSupportActionBar().setTitle("Welcome");
         orderButton = (Button) findViewById(R.id.orderButton);
+
+        VideoView videoView = (VideoView) findViewById(R.id.videoView);
+        Uri uri = Uri.parse("android.resource://"+getPackageName()+"/"+R.raw.video);
+        videoView.setVideoURI(uri);
+        videoView.start();
+        videoView.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+                mp.setLooping(true);
+            }
+        });
         orderButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -28,6 +47,7 @@ public class BookingActivity extends AppCompatActivity {
         });
 
     }
+
 
 
     //when the BookingActivity is loaded, hide the keyboard
