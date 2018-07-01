@@ -12,7 +12,6 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.VideoView;
 
-import static com.example.carwash.R.raw.video;
 
 public class BookingActivity extends AppCompatActivity {
 
