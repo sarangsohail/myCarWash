@@ -13,7 +13,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:background="@drawable/ordering_button"
-        android:text="Facebook Login"
+        android:text="Order A Wash"
         android:textColor="@android:color/white"
 
         app:layout_constraintEnd_toEndOf="parent"
