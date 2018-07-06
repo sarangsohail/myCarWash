@@ -12,7 +12,6 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.VideoView;
 
-
 public class BookingActivity extends AppCompatActivity {
 
     private Button orderButton;
@@ -42,13 +41,10 @@ public class BookingActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent loadCustomerInformationActivity = new Intent(getApplicationContext(), OrderingActivity.class);
                 startActivity(loadCustomerInformationActivity);
+                finish();
             }
         });
-
     }
-
-
-
     //when the BookingActivity is loaded, hide the keyboard
     public static void hideKeyboard(Activity activity) {
         InputMethodManager imm = (InputMethodManager) activity.getSystemService(Activity.INPUT_METHOD_SERVICE);

@@ -6,38 +6,61 @@
     android:layout_height="match_parent"
     tools:context="com.example.carwash.BookingActivity">
 
-    <Button
-        android:id="@+id/orderButton"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:background="@drawable/ordering_button"
-        android:text="Order A Wash"
-        android:textColor="@android:color/white"
 
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="410dp"
-        tools:ignore="MissingConstraints" />
 
-    <VideoView
+      <VideoView
         android:id="@+id/videoView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toTopOf="parent" />
+    <android.support.constraint.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="567dp"
+        android:id="@+id/v_guideline1"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteY="0dp"
+        tools:layout_editor_absoluteX="58dp"
+        app:layout_constraintGuide_percent="0.15104167"/>
 
     <android.support.constraint.Guideline
-        android:id="@+id/v_guideLine"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="567dp"
+        android:id="@+id/v_guideline2"
         android:orientation="vertical"
-        app:layout_constraintGuide_begin="20dp" />
+        tools:layout_editor_absoluteY="0dp"
+        tools:layout_editor_absoluteX="329dp"
+        app:layout_constraintGuide_percent="0.8567708"/>
 
+    <android.support.constraint.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="567dp"
+        android:id="@+id/v_guideline3"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteY="0dp"
+        tools:layout_editor_absoluteX="118dp"
+        app:layout_constraintGuide_percent="0.30729166"/>
+
+    <android.support.constraint.Guideline
+        android:layout_width="384dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/h_guideline1"
+        android:orientation="horizontal"
+        tools:layout_editor_absoluteY="326dp"
+        tools:layout_editor_absoluteX="0dp"
+        app:layout_constraintGuide_percent="0.5749559"/>
+
+    <Button
+        android:text="Order A Wash"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/orderButton"
+        android:textColor="@android:color/white"
+        app:layout_constraintRight_toLeftOf="@+id/v_guideline2"
+        app:layout_constraintLeft_toLeftOf="@+id/v_guideline1"
+        app:layout_constraintTop_toTopOf="@+id/h_guideline1"
+        android:background="@drawable/ordering_button" />
 
 </android.support.constraint.ConstraintLayout>
