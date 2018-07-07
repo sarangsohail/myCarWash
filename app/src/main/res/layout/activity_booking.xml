@@ -14,6 +14,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
     <android.support.constraint.Guideline
         android:layout_width="wrap_content"
         android:layout_height="567dp"
@@ -54,13 +55,17 @@
         android:id="@+id/orderButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="176dp"
         android:background="@drawable/ordering_button"
         android:text="Order A Wash"
         android:textColor="#000000"
         android:textColorLink="@color/colorPrimary"
         android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="@+id/v_guideline1"
         app:layout_constraintRight_toLeftOf="@+id/v_guideline2"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/h_guideline1" />
 
 </android.support.constraint.ConstraintLayout>

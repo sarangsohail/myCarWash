@@ -30,20 +30,23 @@ public class BookingActivity extends AppCompatActivity {
         Uri uri = Uri.parse("android.resource://"+getPackageName()+"/"+R.raw.video);
         videoView.setVideoURI(uri);
         videoView.start();
+
         videoView.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
                 mp.setLooping(true);
             }
+
         });
+
         orderButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent loadCustomerInformationActivity = new Intent(getApplicationContext(), OrderingActivity.class);
                 startActivity(loadCustomerInformationActivity);
-                finish();
             }
         });
+        //todo: add the button to 'use current location to find their car'
     }
     //when the BookingActivity is loaded, hide the keyboard
     public static void hideKeyboard(Activity activity) {
