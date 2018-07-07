@@ -6,8 +6,6 @@
     android:layout_height="match_parent"
     tools:context="com.example.carwash.BookingActivity">
 
-
-
       <VideoView
         android:id="@+id/videoView"
         android:layout_width="0dp"
@@ -53,14 +51,16 @@
         app:layout_constraintGuide_percent="0.5749559"/>
 
     <Button
-        android:text="Order A Wash"
+        android:id="@+id/orderButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:id="@+id/orderButton"
-        android:textColor="@android:color/white"
-        app:layout_constraintRight_toLeftOf="@+id/v_guideline2"
+        android:background="@drawable/ordering_button"
+        android:text="Order A Wash"
+        android:textColor="#000000"
+        android:textColorLink="@color/colorPrimary"
+        android:textStyle="bold"
         app:layout_constraintLeft_toLeftOf="@+id/v_guideline1"
-        app:layout_constraintTop_toTopOf="@+id/h_guideline1"
-        android:background="@drawable/ordering_button" />
+        app:layout_constraintRight_toLeftOf="@+id/v_guideline2"
+        app:layout_constraintTop_toTopOf="@+id/h_guideline1" />
 
 </android.support.constraint.ConstraintLayout>
