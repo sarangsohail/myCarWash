@@ -59,6 +59,7 @@
         android:layout_marginTop="106dp"
         android:fontFamily="serif"
         android:text="Car Location:"
+        android:paddingLeft="2dp"
         android:textAppearance="@style/TextAppearance.AppCompat"
         android:textSize="18sp"
         android:textStyle="bold" />

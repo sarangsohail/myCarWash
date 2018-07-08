@@ -5,11 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.provider.FontsContract;
-import android.support.v4.view.ViewPropertyAnimatorListenerAdapter;
-import android.util.Log;
 
-import java.util.EnumMap;
 
 public class DatabaseHelper  extends SQLiteOpenHelper {
 
