@@ -62,19 +62,20 @@ public class contactDetails extends Fragment {
                 location.addOnCompleteListener(new OnCompleteListener() {
                     @Override
                     public void onComplete(@NonNull Task task) {
-                        if (task.isSuccessful()){
+                        if (task.isSuccessful()) {
                             Log.d(TAG, "onComplete: found location!");
                             Location currentLocation = (Location) task.getResult();
                             currentLAT = currentLocation.getLatitude();
                             currentLOC = currentLocation.getLongitude();
-                        }else{
+                        } else {
                             Log.d(TAG, "onComplete: current location is not found/null");
                             Toast.makeText(getContext(), "unable to get current location", Toast.LENGTH_SHORT).show();
 
 
                         }
                     }
-                })
+                }
+                );
 
             }
         }catch (SecurityException e){
