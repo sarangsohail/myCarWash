@@ -33,6 +33,7 @@ public class contactDetails extends Fragment {
     private static final int LOCATION_PERMISSION_REQUEST_CODE = 1234;
     private static final float DEFAULT_ZOOM = 15f;
 
+    //todo: add switch 'on off method' and perform location coordinates to physical address
     private FusedLocationProviderClient mFusedLocationProviderClient;
     private Boolean mLocationPermissionsGranted = false;
 
@@ -42,7 +43,7 @@ public class contactDetails extends Fragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getLocationPermission();
-
+        getDeviceLocation();
     }
 
     @Override
