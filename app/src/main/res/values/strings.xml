@@ -20,6 +20,7 @@
     <string name="tab_text_2">Tab 2</string>
     <string name="tab_text_3">Tab 3</string>
     <string name="title_activity_ordering">OrderingActivity</string>
+    <string name="address_text">"Address: %1$s"</string>
 
     <string name="hint_name">Name</string>
     <string name="hint_email">Email</string>
