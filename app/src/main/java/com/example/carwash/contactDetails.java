@@ -55,13 +55,12 @@ public class contactDetails extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.contactdetails, container, false);
-        Switch sw = (Switch) view.findViewById(R.id.locationSwitch);
-        sw.setTextOn("Location On");
-        sw.setTextOff("Location Off");
+        final Switch sw = (Switch) view.findViewById(R.id.locationSwitch);
+
         sw.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
-
+                    getDeviceLocation();
                 } else {
 
                 }
@@ -84,8 +83,8 @@ public class contactDetails extends Fragment {
                         if (task.isSuccessful()) {
                             Log.d(TAG, "onComplete: found location!");
                             Location currentLocation = (Location) task.getResult();
-                            currentLAT = currentLocation.getLatitude();
-                            currentLOC = currentLocation.getLongitude();
+
+
                         } else {
                             Log.d(TAG, "onComplete: current location is not found/null");
                             Toast.makeText(getContext(), "unable to get current location", Toast.LENGTH_SHORT).show();
