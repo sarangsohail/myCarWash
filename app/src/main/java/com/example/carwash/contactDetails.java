@@ -38,6 +38,8 @@ import android.widget.Toast;
 
 import com.google.android.gms.common.annotation.KeepForSdkWithFieldsAndMethods;
 import com.google.android.gms.location.FusedLocationProviderClient;
+import com.google.android.gms.location.LocationCallback;
+import com.google.android.gms.location.LocationResult;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -52,9 +54,10 @@ public class contactDetails extends Fragment  {
     private static final int LOCATION_PERMISSION_REQUEST_CODE = 1234;
     private static final float DEFAULT_ZOOM = 15f;
 
+    private boolean mTrackingLocation;
     private FusedLocationProviderClient mFusedLocationProviderClient;
     private Boolean mLocationPermissionsGranted = false;
-
+    LocationCallback mLocationCallback;
 
     double currentLAT = 0;
     double currentLOC = 0;
@@ -63,7 +66,6 @@ public class contactDetails extends Fragment  {
         super.onCreate(savedInstanceState);
         getLocationPermission();
         getDeviceLocation();
-
 
     }
 
@@ -78,6 +80,7 @@ public class contactDetails extends Fragment  {
                 if (isChecked) {
                     getDeviceLocation();
                     firstLineAddress.setText(getString(R.string.address_text));
+
                 } else {
 
                 }
@@ -101,7 +104,8 @@ public class contactDetails extends Fragment  {
                             Log.d(TAG, "onComplete: found location!");
                             Location currentLocation = (Location) task.getResult();
                             //todo: sort this prpblem out
-                            new FetchAddressTask(getActivity(), getContext()).execute(currentLocation);
+                            new FetchAddressTask(getActivity())
+                                    .execute(currentLocation);
 
                         } else {
                             Log.d(TAG, "onComplete: current location is not found/null");
@@ -137,67 +141,5 @@ public class contactDetails extends Fragment  {
                     permissions,
                     LOCATION_PERMISSION_REQUEST_CODE);
         }
-    }
-}
-public class FetchAddressTask extends AsyncTask {
-
-    private Context mContext;
-    private OnTaskCompleted mListener;
-
-    FetchAddressTask(Context applicationContext, OnTaskCompleted onTaskCompleted){
-        mContext = applicationContext;
-    }
-
-    interface OnTaskCompleted{
-        void onTaskCompleted(String result);
-
-    }
-    @Override
-    protected Object doInBackground(Object[] params) {
-
-        Geocoder geocoder = new Geocoder(mContext, Locale.getDefault());
-        Location location = params[0];
-        List<Address> addressList = null;
-        String resultMessage = "";
-
-        try {
-            addressList = geocoder.getFromLocation(
-                    location.getLatitude(),
-                    location.getLongitude(),
-                    1);
-            if (addressList == null || addressList.size() == 0) {
-                if (resultMessage.isEmpty()) {
-                    resultMessage = mContext
-                            .getString(R.string.no_address_found);
-                    Log.e(TAG, resultMessage);
-                }else{
-                    //reverse geocding was successful
-                    Address address = addressList.get(0);
-                    ArrayList<String> addressParts = new ArrayList<>();
-
-                    for (int i = 0; i <= address.getMaxAddressLineIndex(); i++) {
-                        addressParts.add(address.getAddressLine(i));
-                    }
-
-                    resultMessage = TextUtils.join("\n", addressParts);
-                }
-            }
-        } catch (IOException e) {
-            // Catch invalid latitude or longitude values
-            resultMessage = mContext
-                    .getString(R.string.invalid_lat_long_used);
-            Log.e(TAG, resultMessage + ". " +
-                    "Latitude = " + location.getLatitude() +
-                    ", Longitude = " +
-                    location.getLongitude(), e);
-        }
-
-        return resultMessage;
-    }
-
-    @Override
-    protected void onPostExecute(Object o) {
-        mListener.onTaskCompleted(o.toString());
-        super.onPostExecute(o.toString());
     }
 }
