@@ -34,6 +34,7 @@ import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.Switch;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.common.annotation.KeepForSdkWithFieldsAndMethods;
@@ -43,6 +44,8 @@ import com.google.android.gms.location.LocationResult;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+
+import org.w3c.dom.Text;
 
 import static android.content.ContentValues.TAG;
 
@@ -59,6 +62,7 @@ public class contactDetails extends Fragment implements FetchAddressTask.OnTaskC
     private Boolean mLocationPermissionsGranted = false;
     LocationCallback mLocationCallback;
 
+
     double currentLAT = 0;
     double currentLOC = 0;
     @Override
@@ -72,13 +76,11 @@ public class contactDetails extends Fragment implements FetchAddressTask.OnTaskC
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.contactdetails, container, false);
         final Switch sw = (Switch) view.findViewById(R.id.locationSwitch);
-        final EditText firstLineAddress = (EditText) view.findViewById(R.id.first_line_address_et1);
 
         sw.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
                     getDeviceLocation();
-                    firstLineAddress.setText(getString(R.string.address_text));
 
                 } else {
 
@@ -88,36 +90,41 @@ public class contactDetails extends Fragment implements FetchAddressTask.OnTaskC
         return view;
     }
 
-    private void getDeviceLocation(){
+    private void getDeviceLocation() {
 
         mFusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(getContext());
 
-        try{
-            if (mLocationPermissionsGranted){
+        try {
+            if (mLocationPermissionsGranted) {
 
                 Task location = mFusedLocationProviderClient.getLastLocation();
-                location.addOnCompleteListener(new OnCompleteListener() {
-                    @Override
-                    public void onComplete(@NonNull Task task) {
-                        if (task.isSuccessful()) {
-                            Log.d(TAG, "onComplete: found location!");
-                            Location currentLocation = (Location) task.getResult();
 
-                            new FetchAddressTask(getActivity(), contactDetails.this)
-                                    .execute(currentLocation);
-                        } else {
-                            Log.d(TAG, "onComplete: current location is not found/null");
-                            Toast.makeText(getContext(), "unable to get current location", Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                }
+                location.addOnCompleteListener(new OnCompleteListener() {
+                                                   @Override
+                                                   public void onComplete(@NonNull Task task) {
+                                                       if (task.isSuccessful()) {
+                                                           Log.d(TAG, "onComplete: found location!");
+                                                           Location currentLocation = (Location) task.getResult();
+
+                                                           new FetchAddressTask(getActivity(), contactDetails.this)
+                                                                   .execute(currentLocation);
+
+                                                       } else {
+                                                           Log.d(TAG, "onComplete: current location is not found/null");
+                                                           Toast.makeText(getContext(), "unable to get current location", Toast.LENGTH_SHORT).show();
+                                                       }
+                                                   }
+                                               }
                 );
             }
-        }catch (SecurityException e){
+        } catch (SecurityException e) {
 
-            Log.e(TAG, "get device location : Security Exception "  +e.getMessage());
+            Log.e(TAG, "get device location : Security Exception " + e.getMessage());
         }
+
+        //todo: update the textview to show the current phsyical address.
     }
+
     private void getLocationPermission() {
         String[] permissions = {Manifest.permission.ACCESS_FINE_LOCATION,
                 Manifest.permission.ACCESS_COARSE_LOCATION};
