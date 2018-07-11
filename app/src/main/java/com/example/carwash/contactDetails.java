@@ -18,8 +18,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.CompoundButton;
+import android.widget.RadioGroup;
+import android.widget.Switch;
 import android.widget.Toast;
 
+import com.google.android.gms.common.annotation.KeepForSdkWithFieldsAndMethods;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -33,9 +37,9 @@ public class contactDetails extends Fragment {
     private static final int LOCATION_PERMISSION_REQUEST_CODE = 1234;
     private static final float DEFAULT_ZOOM = 15f;
 
-    //todo: add switch 'on off method' and perform location coordinates to physical address
     private FusedLocationProviderClient mFusedLocationProviderClient;
     private Boolean mLocationPermissionsGranted = false;
+
 
     double currentLAT = 0;
     double currentLOC = 0;
@@ -44,11 +48,25 @@ public class contactDetails extends Fragment {
         super.onCreate(savedInstanceState);
         getLocationPermission();
         getDeviceLocation();
+
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.contactdetails, container, false);
+        Switch sw = (Switch) view.findViewById(R.id.locationSwitch);
+        sw.setTextOn("Location On");
+        sw.setTextOff("Location Off");
+        sw.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+
+                } else {
+
+                }
+            }
+        });
         return view;
     }
 
@@ -71,8 +89,6 @@ public class contactDetails extends Fragment {
                         } else {
                             Log.d(TAG, "onComplete: current location is not found/null");
                             Toast.makeText(getContext(), "unable to get current location", Toast.LENGTH_SHORT).show();
-
-
                         }
                     }
                 }
@@ -83,7 +99,6 @@ public class contactDetails extends Fragment {
 
             Log.e(TAG, "get device location : Security Exception "  +e.getMessage());
         }
-
 
     }
     private void getLocationPermission() {
