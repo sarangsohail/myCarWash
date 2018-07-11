@@ -46,7 +46,7 @@ import com.google.android.gms.tasks.Task;
 
 import static android.content.ContentValues.TAG;
 
-public class contactDetails extends Fragment  {
+public class contactDetails extends Fragment implements FetchAddressTask.OnTaskCompleted{
 
     private static final String TAG = "Contact-Details-Fragmnt";
     private static final String FINE_LOCATION = Manifest.permission.ACCESS_FINE_LOCATION;
@@ -66,7 +66,6 @@ public class contactDetails extends Fragment  {
         super.onCreate(savedInstanceState);
         getLocationPermission();
         getDeviceLocation();
-
     }
 
     @Override
@@ -103,10 +102,9 @@ public class contactDetails extends Fragment  {
                         if (task.isSuccessful()) {
                             Log.d(TAG, "onComplete: found location!");
                             Location currentLocation = (Location) task.getResult();
-                            //todo: sort this prpblem out
-                            new FetchAddressTask(getActivity())
-                                    .execute(currentLocation);
 
+                            new FetchAddressTask(getActivity(), contactDetails.this)
+                                    .execute(currentLocation);
                         } else {
                             Log.d(TAG, "onComplete: current location is not found/null");
                             Toast.makeText(getContext(), "unable to get current location", Toast.LENGTH_SHORT).show();
@@ -114,13 +112,11 @@ public class contactDetails extends Fragment  {
                     }
                 }
                 );
-
             }
         }catch (SecurityException e){
 
             Log.e(TAG, "get device location : Security Exception "  +e.getMessage());
         }
-
     }
     private void getLocationPermission() {
         String[] permissions = {Manifest.permission.ACCESS_FINE_LOCATION,
@@ -141,5 +137,10 @@ public class contactDetails extends Fragment  {
                     permissions,
                     LOCATION_PERMISSION_REQUEST_CODE);
         }
+    }
+
+    @Override
+    public void onTaskCompleted(String result) {
+
     }
 }

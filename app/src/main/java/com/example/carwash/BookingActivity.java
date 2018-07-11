@@ -46,7 +46,6 @@ public class BookingActivity extends AppCompatActivity {
                 startActivity(loadCustomerInformationActivity);
             }
         });
-        //todo: add the button to 'use current location to find their car'
     }
     //when the BookingActivity is loaded, hide the keyboard
     public static void hideKeyboard(Activity activity) {
