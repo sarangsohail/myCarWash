@@ -70,16 +70,15 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
-        android:layout_marginBottom="193dp"
-        />
+        android:layout_marginBottom="205dp"
+        android:layout_marginStart="59dp" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="181dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
-        android:layout_marginBottom="235dp"
+        android:layout_below="@+id/thirdLine_address_postcode_et3"
         android:text="Use Current Location"
         android:textSize="18sp"
         android:textStyle="bold" />

@@ -7,6 +7,8 @@ import android.location.Location;
 import android.os.AsyncTask;
 import android.text.TextUtils;
 import android.util.Log;
+import android.widget.Toast;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -37,6 +39,7 @@ public class FetchAddressTask extends AsyncTask<Location, Void, String> {
                     location.getLatitude(),
                     location.getLongitude(),
                     1);
+
             if (addressList == null || addressList.size() == 0) {
                 if (resultMessage.isEmpty()) {
                     resultMessage = mContext
@@ -50,8 +53,8 @@ public class FetchAddressTask extends AsyncTask<Location, Void, String> {
                     for (int i = 0; i <= address.getMaxAddressLineIndex(); i++) {
                         addressParts.add(address.getAddressLine(i));
                     }
-
-                    resultMessage = TextUtils.join("\n", addressParts);
+                    resultMessage =  addressParts.toString();
+                    Log.d(TAG, "geocoding was successful " + resultMessage + location);
                 }
             }
         } catch (IOException e) {

@@ -68,8 +68,6 @@ public class contactDetails extends Fragment implements FetchAddressTask.OnTaskC
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getLocationPermission();
-        getDeviceLocation();
     }
 
     @Override
@@ -80,8 +78,8 @@ public class contactDetails extends Fragment implements FetchAddressTask.OnTaskC
         sw.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
+                    getLocationPermission();
                     getDeviceLocation();
-
                 } else {
 
                 }
@@ -100,17 +98,16 @@ public class contactDetails extends Fragment implements FetchAddressTask.OnTaskC
                 Task location = mFusedLocationProviderClient.getLastLocation();
 
                 location.addOnCompleteListener(new OnCompleteListener() {
-                                                   @Override
-                                                   public void onComplete(@NonNull Task task) {
-                                                       if (task.isSuccessful()) {
-                                                           Log.d(TAG, "onComplete: found location!");
-                                                           Location currentLocation = (Location) task.getResult();
+                    @Override
+                    public void onComplete(@NonNull Task task) {
+                    if (task.isSuccessful()) {
+                        Log.d(TAG, "onComplete: found location!");
+                          Location currentLocation = (Location) task.getResult();
+                            new FetchAddressTask(getActivity(),
+                                    contactDetails.this).execute(currentLocation);
 
-                                                           new FetchAddressTask(getActivity(), contactDetails.this)
-                                                                   .execute(currentLocation);
-
-                                                       } else {
-                                                           Log.d(TAG, "onComplete: current location is not found/null");
+                                } else {
+                                    Log.d(TAG, "onComplete: current location is not found/null");
                                                            Toast.makeText(getContext(), "unable to get current location", Toast.LENGTH_SHORT).show();
                                                        }
                                                    }
@@ -122,7 +119,6 @@ public class contactDetails extends Fragment implements FetchAddressTask.OnTaskC
             Log.e(TAG, "get device location : Security Exception " + e.getMessage());
         }
 
-        //todo: update the textview to show the current phsyical address.
     }
 
     private void getLocationPermission() {
@@ -148,6 +144,7 @@ public class contactDetails extends Fragment implements FetchAddressTask.OnTaskC
 
     @Override
     public void onTaskCompleted(String result) {
-
+        EditText firstLineaddR = (EditText) getView().findViewById(R.id.first_line_address_et1);
+        firstLineaddR.setText(result);
     }
 }
