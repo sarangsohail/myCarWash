@@ -46,7 +46,7 @@ public class FetchAddressTask extends AsyncTask<Location, Void, String> {
                             .getString(R.string.no_address_found);
                     Log.e(TAG, resultMessage);
                 }else{
-                    //reverse geocding was successful
+                    //reverse geo-coding was successful
                     Address address = addressList.get(0);
                     ArrayList<String> addressParts = new ArrayList<>();
 
@@ -69,6 +69,7 @@ public class FetchAddressTask extends AsyncTask<Location, Void, String> {
         return resultMessage;
     }
 
+    //todo - workout why if your location is being tracked and convert it to an address.
     @Override
     protected void onPostExecute(String address) {
         mListener.onTaskCompleted(address);

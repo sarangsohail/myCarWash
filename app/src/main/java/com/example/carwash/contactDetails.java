@@ -95,22 +95,22 @@ public class contactDetails extends Fragment implements FetchAddressTask.OnTaskC
         try {
             if (mLocationPermissionsGranted) {
 
-                Task location = mFusedLocationProviderClient.getLastLocation();
+                final Task location = mFusedLocationProviderClient.getLastLocation();
 
                 location.addOnCompleteListener(new OnCompleteListener() {
                     @Override
                     public void onComplete(@NonNull Task task) {
                     if (task.isSuccessful()) {
-                        Log.d(TAG, "onComplete: found location!");
                           Location currentLocation = (Location) task.getResult();
-                            new FetchAddressTask(getActivity(),
+                        Log.d(TAG, "onComplete: found location!" +currentLocation + location.getResult());
+                        Toast.makeText(getContext(), " oncomplete method -----" + currentLocation , Toast.LENGTH_LONG).show();
+                        new FetchAddressTask(getActivity(),
                                     contactDetails.this).execute(currentLocation);
-
                                 } else {
                                     Log.d(TAG, "onComplete: current location is not found/null");
                                                            Toast.makeText(getContext(), "unable to get current location", Toast.LENGTH_SHORT).show();
-                                                       }
-                                                   }
+                    }
+                    }
                                                }
                 );
             }
