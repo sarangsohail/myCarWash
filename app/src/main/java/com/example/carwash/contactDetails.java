@@ -97,6 +97,7 @@ public class contactDetails extends Fragment implements FetchAddressTask.OnTaskC
 
                 final Task location = mFusedLocationProviderClient.getLastLocation();
 
+                //todo: find out find why the location isn't being converted reverse-geocoded
                 location.addOnCompleteListener(new OnCompleteListener() {
                     @Override
                     public void onComplete(@NonNull Task task) {
