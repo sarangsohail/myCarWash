@@ -73,7 +73,7 @@ public class FetchAddressTask extends AsyncTask<Location, Void, String> {
 
 
             resultMessage = addressParts.toString().replaceAll("\\[", "").replaceAll("\\]","");
-            String modifiedResult = resultMessage.split(",")
+
         }
 
         return resultMessage;

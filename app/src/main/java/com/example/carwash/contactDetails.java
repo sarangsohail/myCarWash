@@ -82,6 +82,14 @@ public class contactDetails extends Fragment implements FetchAddressTask.OnTaskC
                 if (isChecked) {
                     getLocationPermission();
                     getDeviceLocation();
+                }else if (!isChecked) {
+                    EditText firstLineAddr = (EditText) getView().findViewById(R.id.first_line_address_et1);
+                    EditText secondLineAddr = (EditText) getView().findViewById(R.id.secondline_address_town_et2);
+                    EditText thirdLineAddr= (EditText) getView().findViewById(R.id.thirdLine_address_postcode_et3);
+
+                    firstLineAddr.setText("");
+                    secondLineAddr.setVisibility(View.VISIBLE);
+                    thirdLineAddr.setVisibility(View.VISIBLE);
                 }
             }
         });
@@ -143,7 +151,11 @@ public class contactDetails extends Fragment implements FetchAddressTask.OnTaskC
     @Override
     public void onTaskCompleted(String result) {
         EditText firstLineAddr = (EditText) getView().findViewById(R.id.first_line_address_et1);
+        EditText secondLineAddr = (EditText) getView().findViewById(R.id.secondline_address_town_et2);
+        EditText thirdLineAddr= (EditText) getView().findViewById(R.id.thirdLine_address_postcode_et3);
 
         firstLineAddr.setText(result);
+        secondLineAddr.setVisibility(View.INVISIBLE);
+        thirdLineAddr.setVisibility(View.INVISIBLE);
     }
 }
