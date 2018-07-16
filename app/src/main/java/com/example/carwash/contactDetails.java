@@ -103,10 +103,7 @@ public class contactDetails extends Fragment implements FetchAddressTask.OnTaskC
                     if (task.isSuccessful()) {
                           Location currentLocation = (Location) task.getResult();
 
-                        new FetchAddressTask(getActivity(),
-                                contactDetails.this).execute(currentLocation);
-
-
+                        new FetchAddressTask(getActivity(), contactDetails.this).execute(currentLocation);
                                 } else {
                                     Log.d(TAG, "onComplete: current location is not found/null");
                                                            Toast.makeText(getContext(), "unable to get current location", Toast.LENGTH_SHORT).show();

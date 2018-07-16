@@ -71,8 +71,11 @@ public class FetchAddressTask extends AsyncTask<Location, Void, String> {
                 addressParts.add(address.getAddressLine(i));
             }
 
-            resultMessage = addressParts.toString();
 
+            //remove the [] in arrayList
+            String addresspartsModified = addressParts.replaceAll("[]", "");
+
+            resultMessage = addresspartsModified.toString();
 
         }
 
@@ -87,4 +90,5 @@ public class FetchAddressTask extends AsyncTask<Location, Void, String> {
     interface OnTaskCompleted{
         void onTaskCompleted(String result);
     }
+
 }
