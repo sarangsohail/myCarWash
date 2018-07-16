@@ -76,6 +76,9 @@ public class contactDetails extends Fragment implements FetchAddressTask.OnTaskC
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.contactdetails, container, false);
         final Switch sw = (Switch) view.findViewById(R.id.locationSwitch);
+        //todo : set number plate registration as all caps
+        EditText registrationPlate = view.findViewById(R.id.numberPlate_et);
+        registrationPlate.setAllCaps(true);
 
         sw.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
