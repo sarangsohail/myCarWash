@@ -95,18 +95,18 @@ public class contactDetails extends Fragment implements FetchAddressTask.OnTaskC
         try {
             if (mLocationPermissionsGranted) {
 
-                final Task location = mFusedLocationProviderClient.getLastLocation();
+                 Task location = mFusedLocationProviderClient.getLastLocation();
 
-                //todo: find out find why the location isn't being converted reverse-geocoded
                 location.addOnCompleteListener(new OnCompleteListener() {
                     @Override
                     public void onComplete(@NonNull Task task) {
                     if (task.isSuccessful()) {
                           Location currentLocation = (Location) task.getResult();
-                        Log.d(TAG, "onComplete: found location!" +currentLocation + location.getResult());
-                        Toast.makeText(getContext(), " oncomplete method -----" + currentLocation , Toast.LENGTH_LONG).show();
+
                         new FetchAddressTask(getActivity(),
-                                    contactDetails.this).execute(currentLocation);
+                                contactDetails.this).execute(currentLocation);
+
+
                                 } else {
                                     Log.d(TAG, "onComplete: current location is not found/null");
                                                            Toast.makeText(getContext(), "unable to get current location", Toast.LENGTH_SHORT).show();
@@ -145,7 +145,7 @@ public class contactDetails extends Fragment implements FetchAddressTask.OnTaskC
 
     @Override
     public void onTaskCompleted(String result) {
-        EditText firstLineaddR = (EditText) getView().findViewById(R.id.first_line_address_et1);
-        firstLineaddR.setText(result);
+        EditText firstLineAddr = (EditText) getView().findViewById(R.id.first_line_address_et1);
+        firstLineAddr.setText(result);
     }
 }

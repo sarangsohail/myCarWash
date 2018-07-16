@@ -45,4 +45,5 @@
  \n Timestamp: %3$tr"</string>
     <string name="invalid_lat_long_used">\"Invalid coordinates were supplied to the Geocode,\"</string>
     <string name="no_address_found">No Address Found</string>
+    <string name="service_not_available">service not available</string>
 </resources>
