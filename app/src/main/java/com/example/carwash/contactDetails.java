@@ -21,6 +21,7 @@ import android.os.AsyncTask;
 import android.text.TextUtils;
 import android.util.Log;
 
+import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -63,6 +64,7 @@ public class contactDetails extends Fragment implements FetchAddressTask.OnTaskC
     LocationCallback mLocationCallback;
 
 
+
     double currentLAT = 0;
     double currentLOC = 0;
     @Override
@@ -80,8 +82,6 @@ public class contactDetails extends Fragment implements FetchAddressTask.OnTaskC
                 if (isChecked) {
                     getLocationPermission();
                     getDeviceLocation();
-                } else {
-
                 }
             }
         });
@@ -143,6 +143,7 @@ public class contactDetails extends Fragment implements FetchAddressTask.OnTaskC
     @Override
     public void onTaskCompleted(String result) {
         EditText firstLineAddr = (EditText) getView().findViewById(R.id.first_line_address_et1);
+
         firstLineAddr.setText(result);
     }
 }

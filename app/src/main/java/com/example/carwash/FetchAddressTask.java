@@ -72,11 +72,8 @@ public class FetchAddressTask extends AsyncTask<Location, Void, String> {
             }
 
 
-            //remove the [] in arrayList
-            String addresspartsModified = addressParts.replaceAll("[]", "");
-
-            resultMessage = addresspartsModified.toString();
-
+            resultMessage = addressParts.toString().replaceAll("\\[", "").replaceAll("\\]","");
+            String modifiedResult = resultMessage.split(",")
         }
 
         return resultMessage;
