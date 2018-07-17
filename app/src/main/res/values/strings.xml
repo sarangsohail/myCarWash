@@ -22,7 +22,16 @@
     <string name="title_activity_ordering">OrderingActivity</string>
     <string name="address_text">"Address: %1$s"</string>
     <string name="loading">Loading…</string>
-
+    <string-array name="CarSize">
+        <item>Mercury</item>
+        <item>Venus</item>
+        <item>Earth</item>
+        <item>Mars</item>
+        <item>Jupiter</item>
+        <item>Saturn</item>
+        <item>Uranus</item>
+        <item>Neptune</item>
+    </string-array>
     <string name="hint_name">Name</string>
     <string name="hint_email">Email</string>
     <string name="hint_password">Password</string>

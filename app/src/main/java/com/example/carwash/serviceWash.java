@@ -10,16 +10,13 @@ import android.widget.Button;
 
 public class serviceWash extends Fragment {
 
-    private static final String TAG = "Contact Details Fragment";
 
 
-    private Button BTNTest3;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater,  ViewGroup container,  Bundle savedInstanceState) {
         View view =  inflater.inflate(R.layout.service_wash, container, false);
 
-        BTNTest3 = (Button) view.findViewById(R.id.btnTEST3);
 
 
 

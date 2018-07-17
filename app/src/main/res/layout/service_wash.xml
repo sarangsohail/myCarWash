@@ -5,18 +5,152 @@
     android:layout_height="match_parent">
 
     <TextView
+        android:id="@+id/car_plate_tv"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:textSize="25sp"
-        android:text="Tab2"
-        android:layout_marginTop="40dp"
-        android:id="@+id/textTab2"/>
+        android:layout_height="55dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/numberPlate_et"
+        android:text="Car Make"
+        android:textColor="@color/colorPrimary"
+        android:textSize="21sp"
+        android:textStyle="bold" />
 
-    <Button
+    <TextView
+        android:id="@+id/car_plate_tv3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/btnTEST3"
-        android:text="TESTBTN 2"/>
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/numberPlate_et4"
+        android:text="Car Model"
+        android:textColor="@color/colorPrimary"
+        android:textSize="21sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/car_plate_tv4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/numberPlate_et2"
+        android:text="Car Colour"
+        android:textColor="@color/colorPrimary"
+        android:textSize="21sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/car_plate_tv5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/numberPlate_et6"
+        android:text="Car Size"
+        android:textColor="@color/colorPrimary"
+        android:textSize="21sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/car_plate_tv2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="31dp"
+        android:text="Car Registration Number"
+        android:textColor="@color/colorPrimary"
+        android:textSize="21sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/numberPlate_et"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/car_plate_tv2"
+        android:ems="10"
+        android:hint="RJ05 PPI"
+        android:inputType="textCapWords"
+        android:textAllCaps="true" />
+
+    <EditText
+        android:id="@+id/numberPlate_et4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="138dp"
+        android:ems="10"
+        android:hint="Volkswagen"
+        android:inputType="textCapWords"
+        android:textAllCaps="true" />
+
+    <EditText
+        android:id="@+id/numberPlate_et2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/car_plate_tv3"
+        android:ems="10"
+        android:hint="RJ05 PPI"
+        android:inputType="textCapWords"
+        android:textAllCaps="true" />
+
+    <EditText
+        android:id="@+id/numberPlate_et6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/car_plate_tv4"
+        android:ems="10"
+        android:hint="RJ05 PPI"
+        android:inputType="textCapWords"
+        android:textAllCaps="true" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="135dp"
+        android:text="What Wash Do You Want?"
+        android:textColor="@color/colorPrimary"
+        android:textSize="24sp" />
+
+    <Spinner
+        android:id="@+id/car_size"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="177dp" />
+
+    // todo : check if the service wash UI is ok, and if so, continue with the java integration of it
+    <CheckBox
+        android:id="@+id/checkBox2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView2"
+        android:layout_marginTop="-135dp"
+        android:text="CheckBox" />
+
+    <CheckBox
+        android:id="@+id/checkBox3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="60dp"
+        android:text="CheckBox" />
+
+    <CheckBox
+        android:id="@+id/checkBox4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="20dp"
+        android:text="CheckBox" />
+
 
 </RelativeLayout>
