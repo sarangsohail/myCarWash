@@ -89,5 +89,3 @@ public class FetchAddressTask extends AsyncTask<Location, Void, String> {
     }
 
 }
-
-//todo : finish off the geocding

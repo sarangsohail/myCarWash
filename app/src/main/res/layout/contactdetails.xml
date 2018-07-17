@@ -105,7 +105,7 @@
         android:layout_marginTop="-175dp"
         android:ems="10"
         android:hint="RJ05 PPI"
-        android:inputType="text" />
+        android:inputType="textCapWords" />
 
 
 </RelativeLayout>
