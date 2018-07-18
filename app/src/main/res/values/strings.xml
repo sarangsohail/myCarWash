@@ -22,15 +22,11 @@
     <string name="title_activity_ordering">OrderingActivity</string>
     <string name="address_text">"Address: %1$s"</string>
     <string name="loading">Loading…</string>
-    <string-array name="CarSize">
-        <item>Mercury</item>
-        <item>Venus</item>
-        <item>Earth</item>
-        <item>Mars</item>
-        <item>Jupiter</item>
-        <item>Saturn</item>
-        <item>Uranus</item>
-        <item>Neptune</item>
+    <string-array name="CarSize" >
+        
+        <item>Small(Ford Fiesta)</item>
+        <item>Medium (Nissan Juke)</item>
+        <item>Large (Range Rover)</item>
     </string-array>
     <string name="hint_name">Name</string>
     <string name="hint_email">Email</string>

@@ -5,9 +5,9 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/car_plate_tv"
+        android:id="@+id/car_make_tv"
         android:layout_width="wrap_content"
-        android:layout_height="55dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/numberPlate_et"
         android:text="Car Make"
@@ -16,33 +16,33 @@
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/car_plate_tv3"
+        android:id="@+id/car_model_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/numberPlate_et4"
+        android:layout_below="@+id/car_make_et"
         android:text="Car Model"
         android:textColor="@color/colorPrimary"
         android:textSize="21sp"
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/car_plate_tv4"
+        android:id="@+id/car_colour_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/numberPlate_et2"
+        android:layout_below="@+id/car_model_et"
         android:text="Car Colour"
         android:textColor="@color/colorPrimary"
         android:textSize="21sp"
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/car_plate_tv5"
+        android:id="@+id/car_size_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/numberPlate_et6"
+        android:layout_below="@+id/car_colour_et"
         android:text="Car Size"
         android:textColor="@color/colorPrimary"
         android:textSize="21sp"
@@ -72,7 +72,7 @@
         android:textAllCaps="true" />
 
     <EditText
-        android:id="@+id/numberPlate_et4"
+        android:id="@+id/car_make_et"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -84,22 +84,22 @@
         android:textAllCaps="true" />
 
     <EditText
-        android:id="@+id/numberPlate_et2"
+        android:id="@+id/car_model_et"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/car_plate_tv3"
+        android:layout_below="@+id/car_model_tv"
         android:ems="10"
         android:hint="RJ05 PPI"
         android:inputType="textCapWords"
         android:textAllCaps="true" />
 
     <EditText
-        android:id="@+id/numberPlate_et6"
+        android:id="@+id/car_colour_et"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/car_plate_tv4"
+        android:layout_below="@+id/car_colour_tv"
         android:ems="10"
         android:hint="RJ05 PPI"
         android:inputType="textCapWords"
@@ -109,48 +109,48 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
-        android:layout_marginBottom="135dp"
+        android:layout_below="@+id/car_size_spinner"
+        android:layout_marginTop="-177dp"
         android:text="What Wash Do You Want?"
         android:textColor="@color/colorPrimary"
         android:textSize="24sp" />
 
     <Spinner
-        android:id="@+id/car_size"
-        android:layout_width="match_parent"
+        android:id="@+id/car_size_spinner"
+        android:layout_width="156dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
         android:layout_marginBottom="177dp" />
 
-    // todo : check if the service wash UI is ok, and if so, continue with the java integration of it
-    <CheckBox
-        android:id="@+id/checkBox2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/textView2"
-        android:layout_marginTop="-135dp"
-        android:text="CheckBox" />
 
     <CheckBox
-        android:id="@+id/checkBox3"
+        android:id="@+id/exteriorWash_check"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
-        android:layout_marginBottom="60dp"
-        android:text="CheckBox" />
+        android:layout_marginBottom="97dp"
+        android:text="Exterior Wash" />
 
     <CheckBox
-        android:id="@+id/checkBox4"
+        android:id="@+id/interiorWash_check"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
-        android:layout_marginBottom="20dp"
-        android:text="CheckBox" />
+        android:layout_marginBottom="58dp"
+        android:text= "Interior Wash" />
+
+    <CheckBox
+        android:id="@+id/interior_exterior_wash"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="17dp"
+        android:text="Interior +  Exterior Wash" />
 
 
 </RelativeLayout>
