@@ -22,7 +22,7 @@
     <string name="title_activity_ordering">OrderingActivity</string>
     <string name="address_text">"Address: %1$s"</string>
     <string name="loading">Loading…</string>
-    <string-array name="CarSize" >
+    <string-array name="CarSize">
         <item>Small(Ford Fiesta)</item>
         <item>Medium (Nissan Juke)</item>
         <item>Large (Range Rover)</item>
@@ -58,14 +58,14 @@
     <string name="slide_1_title">Welcome To myWash</string>
     <string name="slide_1_desc"> Have Your Car Washed In 3 Easy Steps!</string>
 
-    <string name="slide_2_title">Movie Tickets</string>
-    <string name="slide_2_desc">Book movie tickets for your family and friends!</string>
+    <string name="slide_2_title">Step 1 </string>
+    <string name="slide_2_desc">Tell Us Where Your Car Is</string>
 
-    <string name="slide_3_title">Great Discounts</string>
-    <string name="slide_3_desc">Best discounts on every single service we offer!</string>
+    <string name="slide_3_title">Step 2 </string>
+    <string name="slide_3_desc">Select What Kind Of Wash You Want</string>
 
-    <string name="slide_4_title">World Travel</string>
-    <string name="slide_4_desc">Book tickets of any transportation and travel the world!</string>
+    <string name="slide_4_title">Step 3</string>
+    <string name="slide_4_desc">Pay And Relax</string>
 
     <string name="play_again_desc">To see the welcome slider again, goto Settings -> apps -> welcome slider -> clear data</string>
     <string name="play_again">Play Again</string>
