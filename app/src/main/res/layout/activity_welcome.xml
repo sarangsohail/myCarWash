@@ -47,4 +47,4 @@
         android:text="@string/skip"
         android:textColor="@android:color/white" />
 
-</RelativeLayout>>
+</RelativeLayout>

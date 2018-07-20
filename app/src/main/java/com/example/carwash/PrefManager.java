@@ -3,7 +3,7 @@ package com.example.carwash;
 import android.content.Context;
 import android.content.SharedPreferences;
 
-public class prefManager {
+public class PrefManager {
 
     SharedPreferences pref;
     SharedPreferences.Editor editor;
@@ -15,7 +15,7 @@ public class prefManager {
 
     public static final String IS_FIRST_TIME_LAUNCH = "isFirstTimeLaunch";
 
-    public prefManager(Context context){
+    public PrefManager(Context context){
 
         this.context = context;
         //variable name
