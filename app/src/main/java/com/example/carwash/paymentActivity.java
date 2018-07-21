@@ -26,3 +26,4 @@ public class paymentActivity extends Fragment {
         return view;
     }
 }
+// see if i can intergrate paypal into this fragment or make a bank input UI

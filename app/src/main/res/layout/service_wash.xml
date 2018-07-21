@@ -120,9 +120,8 @@
         android:id="@+id/car_size_spinner"
         android:layout_width="156dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
-        android:layout_marginBottom="177dp" />
+        android:layout_below="@+id/car_size_tv" />
 
 
     <CheckBox

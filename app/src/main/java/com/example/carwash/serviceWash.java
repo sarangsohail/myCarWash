@@ -65,22 +65,24 @@ public class serviceWash extends Fragment {
                 }
             }
         });
-        CheckBox interiorExteriorCk = view.findViewById(R.id.interior_exterior_wash);
-        interiorExteriorCk.setOnClickListener(new View.OnClickListener() {
+        CheckBox interior_exteriorWash  = view.findViewById(R.id.interior_exterior_wash);
+        interior_exteriorWash.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (((CheckBox) view).isChecked()) {
-                    TextView interExterckTV = (TextView) getView().findViewById(R.id.interior_exterior_wash);
-                    interExterckTV.setVisibility(View.VISIBLE);
+                    TextView exteriorViewTv = (TextView) getView().findViewById(R.id.exteriorAndInteriorWashPrice_tv);
+                    exteriorViewTv.setVisibility(View.VISIBLE);
                 }
                 else{
-                    TextView interExterckTV = (TextView) getView().findViewById(R.id.interior_exterior_wash);
-                    interExterckTV.setVisibility(View.INVISIBLE);
+                    TextView exteriorViewTv = (TextView) getView().findViewById(R.id.exteriorAndInteriorWashPrice_tv);
+                    exteriorViewTv.setVisibility(View.INVISIBLE);
                 }
             }
         });
+
 
         return view;
     }
 
 }
+//todo check whether the price for the interior and exterior wash is working + check if the UI could be improved
