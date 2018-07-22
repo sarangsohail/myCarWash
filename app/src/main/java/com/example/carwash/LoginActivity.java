@@ -15,7 +15,7 @@ import android.support.v7.widget.AppCompatButton;
 import android.support.v7.widget.AppCompatTextView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-
+import android.widget.Toast;
 
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
@@ -106,7 +106,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             startActivity(accountsIntent);
             finish();
         } else {
-            Snackbar.make(nestedScrollView, getString(R.string.error_valid_email_password), Snackbar.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "Wrong email or password, try again",  Toast.LENGTH_LONG).show();
         }
     }
 

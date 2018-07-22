@@ -154,8 +154,8 @@
         android:id="@+id/exteriorAndInteriorWashPrice_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/interior_exterior_wash"
         android:layout_alignParentEnd="true"
-        android:layout_below="@+id/interiorWash_check"
         android:text="£10"
         android:textStyle="bold"
         android:visibility="invisible" />
