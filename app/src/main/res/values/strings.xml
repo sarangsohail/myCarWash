@@ -70,4 +70,7 @@
 
     <string name="play_again_desc">To see the welcome slider again, goto Settings -> apps -> welcome slider -> clear data</string>
     <string name="play_again">Play Again</string>
+    <string name="InteriorWashPrice">£5</string>
+    <string name="exteriorWashPrice">£5</string>
+    <string name="interior_exterior_WashPrice">£10</string>
 </resources>
