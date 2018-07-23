@@ -5,17 +5,22 @@ import android.app.Activity;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.net.Uri;
+import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.VideoView;
 
 public class BookingActivity extends AppCompatActivity {
 
     private Button orderButton;
-    VideoView videoView;
+
+    private TextView emailTV;
+
+
 
     @SuppressLint("ResourceType")
     @Override
@@ -26,18 +31,10 @@ public class BookingActivity extends AppCompatActivity {
         getSupportActionBar().setTitle("Welcome");
         orderButton = (Button) findViewById(R.id.orderButton);
 
-        VideoView videoView = (VideoView) findViewById(R.id.videoView);
-        Uri uri = Uri.parse("android.resource://"+getPackageName()+"/"+R.raw.video);
-        videoView.setVideoURI(uri);
-        videoView.start();
 
-        videoView.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
-            @Override
-            public void onPrepared(MediaPlayer mp) {
-                mp.setLooping(true);
-            }
-
-        });
+        emailTV = (TextView) findViewById(R.id.welcomeTV);
+        String nameFromIntent = getIntent().getStringExtra("EMAIL");
+        emailTV.setText("Welcome, \n " + nameFromIntent);
 
         orderButton.setOnClickListener(new View.OnClickListener() {
             @Override

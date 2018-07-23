@@ -90,7 +90,7 @@
         android:layout_alignParentStart="true"
         android:layout_below="@+id/car_model_tv"
         android:ems="10"
-        android:hint="RJ05 PPI"
+        android:hint="Golf"
         android:inputType="textCapWords"
         android:textAllCaps="true" />
 
@@ -101,20 +101,9 @@
         android:layout_alignParentStart="true"
         android:layout_below="@+id/car_colour_tv"
         android:ems="10"
-        android:hint="RJ05 PPI"
+        android:hint="Blue"
         android:inputType="textCapWords"
         android:textAllCaps="true" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="153dp"
-        android:text="What Wash Do You Want?"
-        android:textColor="@color/colorPrimary"
-        android:textSize="24sp" />
 
     <Spinner
         android:id="@+id/car_size_spinner"
@@ -123,6 +112,18 @@
         android:layout_alignParentStart="true"
         android:layout_below="@+id/car_size_tv" />
 
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/car_size_spinner"
+        android:layout_alignParentBottom="true"
+        android:paddingTop="2dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="153dp"
+        android:text="What Wash Do You Want?"
+        android:textColor="@color/colorPrimary"
+        android:textSize="24sp" />
 
     <CheckBox
         android:id="@+id/exteriorWash_check"
@@ -130,7 +131,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
-        android:layout_marginBottom="114dp"
+        android:layout_marginBottom="113dp"
         android:text="Exterior Wash" />
 
     <CheckBox
@@ -139,16 +140,16 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/exteriorWash_check"
-        android:layout_marginTop="-114dp"
+        android:layout_marginTop="-113dp"
         android:text="Interior Wash" />
-
     <CheckBox
-        android:id="@+id/interior_exterior_wash"
+        android:id="@+id/exteriorWash_check2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/interiorWash_check"
-        android:text="Interior +  Exterior Wash" />
+        android:layout_marginBottom="113dp"
+        android:text="Exterior Wash" />
 
     <TextView
         android:id="@+id/exteriorAndInteriorWashPrice_tv"
@@ -156,17 +157,27 @@
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/interior_exterior_wash"
         android:layout_alignParentEnd="true"
-        android:text="£10"
+        android:text="@string/interior_exterior_WashPrice"
         android:textStyle="bold"
         android:visibility="invisible" />
+
+
+    <CheckBox
+        android:id="@+id/interior_exterior_wash"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/interiorWash_check"
+        android:text="Exterior + W"
+        />
 
     <TextView
         android:id="@+id/exteriorWashPrice_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/exteriorWash_check"
         android:layout_alignParentEnd="true"
-        android:layout_alignTop="@+id/exteriorWash_check"
-        android:text="£5"
+        android:text="@string/exteriorWashPrice"
         android:textStyle="bold"
         android:visibility="invisible" />
 
@@ -174,10 +185,10 @@
         android:id="@+id/interiorWashPrice_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+
+        android:layout_alignBottom="@+id/interiorWash_check"
         android:layout_alignParentEnd="true"
-        android:layout_below="@+id/exteriorWash_check"
-        android:layout_marginTop="-114dp"
-        android:text="£5"
+        android:text="@string/InteriorWashPrice"
         android:textStyle="bold"
         android:visibility="invisible" />
 
