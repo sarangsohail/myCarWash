@@ -1,0 +1,76 @@
+<resources>
+    <string name="app_name">carWash</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in </string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+    <string name="title_activity_customer_information">CustomerInformationActivity</string>
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Where Is Your Car? %1$d</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+    <string name="tab_text_3">Tab 3</string>
+    <string name="title_activity_ordering">OrderingActivity</string>
+    <string name="address_text">"Address: %1$s"</string>
+    <string name="loading">Loading…</string>
+    <string-array name="CarSize">
+        <item>Small(Ford Fiesta)</item>
+        <item>Medium (Nissan Juke)</item>
+        <item>Large (Range Rover)</item>
+    </string-array>
+    <string name="hint_name">Name</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_password">Password</string>
+    <string name="hint_confirm_password">Confirm Password</string>
+    <string name="text_login">Login</string>
+    <string name="text_register">Register</string>
+    <string name="error_message_name">Enter Full Name</string>
+    <string name="error_message_email">Enter Valid Email</string>
+
+    <string name="error_message_age">Enter Age</string>
+    <string name="error_message_password">Enter Password</string>
+    <string name="success_message">Registration Successful</string>
+    <string name="text_not_member">No account yet? Create one</string>
+    <string name="text_already_member">Already a member? Login</string>
+    <string name="error_email_exists">Email Already Exists</string>
+    <string name="error_password_match">Password Does Not Matches</string>
+    <string name="error_valid_email_password">Wrong Password</string>
+    <string name="text_member">Already a member? Login</string>
+    <string name="hint_insert_email"> Email </string>
+    <string name="location_text">"Latitude: %1$.4f \n Longitude: %2$.4f
+ \n Timestamp: %3$tr"</string>
+    <string name="invalid_lat_long_used">\"Invalid coordinates were supplied to the Geocode,\"</string>
+    <string name="no_address_found">No Address Found</string>
+    <string name="service_not_available">service not available</string>
+    <string name="title_activity_welcome">Home Screen</string>
+    <string name="next">NEXT</string>
+    <string name="skip">SKIP</string>
+    <string name="start">GOT IT</string>
+
+    <string name="slide_1_title">Welcome To myWash</string>
+    <string name="slide_1_desc"> Have Your Car Washed In 3 Easy Steps!</string>
+
+    <string name="slide_2_title">Step 1 </string>
+    <string name="slide_2_desc">Tell Us Where Your Car Is</string>
+
+    <string name="slide_3_title">Step 2 </string>
+    <string name="slide_3_desc">Select What Kind Of Wash You Want</string>
+
+    <string name="slide_4_title">Step 3</string>
+    <string name="slide_4_desc">Pay And Relax</string>
+
+    <string name="play_again_desc">To see the welcome slider again, goto Settings -> apps -> welcome slider -> clear data</string>
+    <string name="play_again">Play Again</string>
+    <string name="InteriorWashPrice">£5</string>
+    <string name="exteriorWashPrice">£5</string>
+    <string name="interior_exterior_WashPrice">£10</string>
+</resources>
