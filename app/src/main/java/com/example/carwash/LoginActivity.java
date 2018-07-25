@@ -15,6 +15,7 @@ import android.support.v7.widget.AppCompatButton;
 import android.support.v7.widget.AppCompatTextView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
@@ -37,6 +38,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private InputValidation inputValidation;
     private DatabaseHelper databaseHelper;
 
+    private TextView washerTV;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,6 +52,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private void initViews(){
         nestedScrollView = (NestedScrollView) findViewById(R.id.nestedScrollView);
 
+        washerTV = (TextView) findViewById(R.id.washerID);
         textInputLayoutEmail = (TextInputLayout) findViewById(R.id.textInputLayoutEmail);
         textInputLayoutPassword = (TextInputLayout) findViewById(R.id.textInputLayoutPassword);
 
@@ -66,6 +69,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private void initListeners(){
         appCompatButtonLogin.setOnClickListener(this);
         textViewLinkRegister.setOnClickListener(this);
+        washerTV.setOnClickListener(this);
     }
 
     private void initObjects(){
@@ -82,6 +86,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             case R.id.textViewLinkRegister:
                 Intent intentRegister = new Intent(getApplicationContext(), RegisterActivity.class);
                 startActivity(intentRegister);
+                break;
+            case R.id.washerID:
+                Intent intentWasher = new Intent((getApplicationContext()), washerAccount.class);
+                startActivity(intentWasher);
                 break;
         }
     }
