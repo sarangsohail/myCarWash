@@ -69,8 +69,8 @@
             android:textColor="@color/colorAccent"
             android:fontFamily="monospace"
             android:textStyle="bold"
-            android:background="@color/white"
-            android:layout_marginTop="40dp"
+            android:background="@color/green"
+            android:layout_marginTop="35dp"
             android:text="@string/text_login" />
 
 
@@ -85,13 +85,14 @@
             android:text="@string/text_not_member"
             android:textSize="16sp"/>
 
-        <android.support.v7.widget.AppCompatTextView
-            android:layout_width="wrap_content"
+        <android.support.v7.widget.AppCompatButton
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Sign in as Washer"
             android:id="@+id/washerID"
-            android:layout_marginTop="33dp"
+            android:layout_marginTop="30dp"
             android:textColor="@color/white"
+            android:background="@color/brightBlue"
             android:textSize="16dp"
             android:layout_gravity="center"
             />
