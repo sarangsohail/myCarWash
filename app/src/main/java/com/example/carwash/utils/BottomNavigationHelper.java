@@ -4,7 +4,7 @@ import android.util.Log;
 
 import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
 
-//object class to make it easier to setup the bottom navbar for all the separate profile views
+//object class to make it easier to setup the bottom nav bar for all the separate profile views
 public class BottomNavigationHelper{
 
     public static void setupBottomNavigationView(BottomNavigationViewEx bottomNavigationViewEx){
