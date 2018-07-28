@@ -1,5 +1,6 @@
 package com.example.carwash;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -9,12 +10,12 @@ import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
 
 public class SearchActivity extends AppCompatActivity {
 
+    private Context mContext = SearchActivity.this;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-
 
        // setupBottomNavigation();
         }
@@ -22,6 +23,8 @@ public class SearchActivity extends AppCompatActivity {
     public void setupBottomNavigation(){
         BottomNavigationViewEx bottomNavigationViewEx = (BottomNavigationViewEx) findViewById(R.id.bottomNavViewBar);
         BottomNavigationHelper.setupBottomNavigationView(bottomNavigationViewEx);
+        BottomNavigationHelper.enableNavigation(mContext, bottomNavigationViewEx);
 
     }
+
 }

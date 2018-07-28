@@ -1,14 +1,18 @@
 package com.example.carwash;
 
+import android.content.ClipData;
+import android.content.Context;
+import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MenuItem;
 
 import com.example.carwash.utils.BottomNavigationHelper;
 
 import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
 
-public class washerAccount extends AppCompatActivity {
+public class WasherHome extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +26,7 @@ public class washerAccount extends AppCompatActivity {
     public void setupBottomNavigation(){
         BottomNavigationViewEx bottomNavigationViewEx = (BottomNavigationViewEx) findViewById(R.id.bottomNavViewBar);
         BottomNavigationHelper.setupBottomNavigationView(bottomNavigationViewEx);
-
+        BottomNavigationHelper.enableNavigation(WasherHome.this, bottomNavigationViewEx);
     }
+
 }

@@ -1,7 +1,6 @@
 package com.example.carwash;
 
 import android.content.Intent;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 
 
@@ -13,7 +12,6 @@ import android.support.design.widget.TextInputLayout;
 import android.support.v4.widget.NestedScrollView;
 import android.support.v7.widget.AppCompatButton;
 import android.support.v7.widget.AppCompatTextView;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -88,7 +86,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 startActivity(intentRegister);
                 break;
             case R.id.washerID:
-                Intent intentWasher = new Intent((getApplicationContext()), washerAccount.class);
+                Intent intentWasher = new Intent((getApplicationContext()), WasherHome.class);
                 startActivity(intentWasher);
                 break;
         }
