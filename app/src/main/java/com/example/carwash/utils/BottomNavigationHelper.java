@@ -45,7 +45,6 @@ public class BottomNavigationHelper {
                         Intent intent4 = new Intent(context, ProfileActivity.class);
                         context.startActivity(intent4);
                         break;
-
                 }
                 return false;
             }
