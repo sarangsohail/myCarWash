@@ -80,7 +80,6 @@ public class serviceWash extends Fragment {
             }
         });
 
-
         return view;
     }
 
