@@ -18,8 +18,8 @@ public class ProfileActivity extends AppCompatActivity {
         setContentView(R.layout.activity_notifications);
 
          setupBottomNavigation();
-
     }
+
     public void setupBottomNavigation(){
         BottomNavigationViewEx bottomNavigationViewEx = (BottomNavigationViewEx) findViewById(R.id.bottomNavViewBar);
         BottomNavigationHelper.setupBottomNavigationView(bottomNavigationViewEx);
